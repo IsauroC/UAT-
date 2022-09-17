@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>
+    UAT Space Program
+    </title>
+</head>
+<body>
+  <h1>  <img src="Spaceimage.jpg" alt="Spaceimage.jpg"></h1>
+    <h2>UAT Space Program</h2>
+    <h3> Test of document write function</h3>
+    <p>Test of the paragraph Tags</p>
+    <h4><button onclick="myFunction()">Start</button> <button onclick="stopmyFunction()">Stop</button>
+
+</body>
+</html>
+
+<script>
+function myFunction() {
+  ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => alert(`"After trying to figure this out for 16 hours": ${value}.`)); // Begin count down as well as alert
+
+ function ProgressCountdown(timeleft, bar, text) { //Progress count down bar
+  return new Promise((resolve, reject) => {
+    var countdownTimer = setInterval(() => {
+      timeleft--;
+
+      document.getElementById(bar).value = timeleft;
+      document.getElementById(text).textContent = timeleft;
+
+      if (timeleft <= 0) {
+        clearInterval(countdownTimer);
+        resolve("BLAST OFF!!!!");
+       }
+     }, 1000);
+   });
+ }
+}
+</script>
+<div class="row begin-countdown">
+    <div class="col-md-12 text-center">
+      <progress value="10" max="10" id="pageBeginCountdown"></progress>
+      <p> Begining in <span id="pageBeginCountdownText">10 </span> seconds</p>
+    </div>
+  </div>
