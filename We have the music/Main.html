@@ -1,0 +1,102 @@
+<!DOCTYPE html><!--Isauro Cantu-->
+<html lang="en">
+<head>
+  <!-- BACKGROUND MUSIC -->
+  <audio id="player" loop>
+    <source src='tech.mp3.mp3' type='audio/mpeg'/>
+  </audio>
+  
+  <button id="button">Play Music</button>
+  <script>
+var button = document.getElementById("button");//button ID
+var audio = document.getElementById("player");
+
+button.addEventListener("click", function(){
+  if(audio.paused){
+    audio.play();
+    button.innerHTML = "&#10074;&#10074;";//Play music events
+  } else {
+    audio.pause();
+    button.innerHTML = "&#9658";
+  }
+});
+</script>
+    <link rel="stylesheet" href="style.css">
+    <title>
+    UAT Space Program
+    </title>
+</head>
+<body>
+  <body>
+    <h1> Hello. What is your first name?</h1>
+    <input id = "userInput"> <br> <br>
+    <h1> And Last name </h1>
+    <input id = "lastName"> <br> <br>
+    
+    <button onclick="Firstpart()"> Submit </button>
+    <h1 id="message"> </h1>
+
+    <script>
+       function Firstpart () {
+       let userInput = document.querySelector("#userInput"); // First name Input
+       let message = document.querySelector("#message");
+       let lastName = document.querySelector("#lastName"); // Last Name Input
+
+       message.innerHTML = "Welcome to UAT Space program " + userInput.value + "  " + lastName.value ;
+
+       }
+    </script>
+
+<form>
+    <label for="quantity">Badge number between 1 - 1000 :</label> <br> <br>
+    <input type="number" id="quantity" name="quantity" min="1" max="1000">
+  </form>
+  <button onclick="Badge()"> Submit </button>
+    <h2 id="badge" > </h2>
+<script>
+    function Badge() {
+        let quantity = document.querySelector("#quantity");
+
+        badge.innerHTML = "Welcome UAT Commander " + quantity.value;
+
+
+    }
+
+    //Below is Space image
+</script>
+  <h1>  <img src="Spaceimage.jpg" alt="Spaceimage.jpg"></h1>
+    <h2>UAT Space Program</h2>
+    <h3> Test of document write function</h3>
+    <p>Test of the paragraph Tags</p>
+    <button onclick="countDownClock()">Start<i class="fa fa-play"></i></button>
+    <button onclick="clearInterval(countDown);"><i class="fa fa-stop"> Stop </i></button>
+    
+    <div id="countDownTimer"></div>
+      
+</body>
+</html>
+
+<script>
+  var countDown;
+  
+  function countDownClock() {
+    var timeLeft = 10;
+    var text = document.getElementById("countDownTimer");// Countdown functions
+    countDown = setInterval(function() {
+      if (timeLeft == 4){
+          alert("Half Way there");
+      }
+  
+  
+      if (timeLeft == 0) {
+        clearInterval(countDown);
+        text.innerHTML = "Blast Off!!!";// Time left events
+      }
+      
+      else {
+        text.innerHTML = timeLeft;
+      }
+      timeLeft -= 1;
+    }, 1000);
+  }
+  </script>
